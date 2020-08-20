@@ -6,7 +6,7 @@ import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
-import com.example.demo.SampleJmsErrorHandler;
+import com.example.demo.jms.SampleJmsErrorHandler;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import org.slf4j.Logger;
