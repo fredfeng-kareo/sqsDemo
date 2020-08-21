@@ -4,7 +4,7 @@ import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.Message;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
-import com.example.demo.payload.DemoMessage;
+import com.example.demo.payload.SurescriptMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class AwsConsumer {
         // delete messages from the queue
         for (Message m : messages) {
             sqs.deleteMessage(queueUrl, m.getReceiptHandle());
-            DemoMessage demoMessage = objectMapper.readValue(m.getBody(), DemoMessage.class);
+            SurescriptMessage demoMessage = objectMapper.readValue(m.getBody(), SurescriptMessage.class);
             System.out.println(objectMapper.writeValueAsString(demoMessage));
         }
     }
